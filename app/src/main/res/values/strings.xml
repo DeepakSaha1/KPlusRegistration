@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">KPlusRegistration</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_email_edit_text_fragment_register">Email</string>
+    <string name="hint_password_edit_text_fragment_register">Password</string>
+    <string name="hint_confirm_password_edit_text_fragment_register">Confirm Password</string>
+    <string name="hint_k_plus_smart_card_edit_text_fragment_register">K+ Smartcard</string>
+    <string name="hint_k_plus_set_top_box_edit_text_fragment_register">K+ Set top box</string>
+    <string name="hint_captcha_code__edit_text_fragment_register">Captcha code</string>
+    <string name="guideline_to_get_the_stb_serial_number_here_edit_text_fragment_register">Guideline to get the STB
+        serial number here
+    </string>
+    <string name="register_button_fragment_register">Register</string>
+    <string name="terms_and_conditions_checkbox_fragment_register">I read and agree to the General Terms and
+        Conditions
+    </string>
+
+    <!--facebook-->
+    <string name="facebook_app_id">375833469934235</string>
+    <string name="fb_login_protocol_scheme">fb375833469934235</string>
+
+    <string name="gmail_login_key">AIzaSyA2qk8eyNAG9XgXky6x5S1m7wAe6-yjXNc</string>
+
+</resources>

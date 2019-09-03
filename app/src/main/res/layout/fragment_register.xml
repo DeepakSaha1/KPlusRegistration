@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="RegisterViewModel" type="com.example.kplusregistration.viewmodel.RegisterViewModel"/>
+    </data>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_linear_layout_fragment_register">
+
+            <EditText
+                    android:id="@+id/id_email_edit_text_fragment_register"
+                    android:hint="@string/hint_email_edit_text_fragment_register"
+                    style="@style/edit_text_layout_style"
+                    android:inputType="textEmailAddress"
+                    android:text="@={RegisterViewModel.MEmail}"/>
+
+            <EditText style="@style/edit_text_layout_style"
+                      android:id="@+id/id_password_edit_text_fragment_register"
+                      android:inputType="textPassword"
+                      android:hint="@string/hint_password_edit_text_fragment_register"
+                      android:text="@={RegisterViewModel.MPassword}"/>
+
+            <EditText style="@style/edit_text_layout_style"
+                      android:id="@+id/id_conform_password_edit_text_fragment_register"
+                      android:inputType="textPassword"
+                      android:hint="@string/hint_password_edit_text_fragment_register"/>
+
+            <EditText style="@style/edit_text_layout_style"
+                      android:id="@+id/id_k_plus_smart_card_edit_text_fragment_register"
+                      android:inputType="text"
+                      android:hint="@string/hint_k_plus_smart_card_edit_text_fragment_register"/>
+
+            <EditText style="@style/edit_text_layout_style"
+                      android:id="@+id/id_k_plus_set_up_box_edit_text_fragment_register"
+                      android:hint="@string/hint_k_plus_set_top_box_edit_text_fragment_register"
+                      android:inputType="text"/>
+
+            <TextView style="@style/edit_text_layout_style"
+                      android:text="@string/guideline_to_get_the_stb_serial_number_here_edit_text_fragment_register"
+                      android:textColor="@color/colorRed"
+                      android:textSize="@dimen/text_size_fragment_register"/>
+
+            <EditText style="@style/edit_text_layout_style"
+                      android:id="@+id/id_captcha_code_edit_text_fragment_register"
+                      android:hint="@string/hint_captcha_code__edit_text_fragment_register"
+                      android:inputType="text"/>
+
+            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/terms_and_conditions_checkbox_fragment_register"
+                      android:textSize="@dimen/text_size_fragment_register"/>
+
+
+            <com.facebook.login.widget.LoginButton
+                    android:id="@+id/id_facebook_login_button_fragment_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"/>
+
+            <com.google.android.gms.common.SignInButton
+                    android:id="@+id/id_google_sign_in_button_fragment_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <Button android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/register_button_fragment_register"
+                    android:onClick="@{(v) -> RegisterViewModel.onClick(v)}"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
