@@ -41,7 +41,7 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        mBinding= FragmentRegisterBinding.inflate(inflater, container, false)
+        mBinding = FragmentRegisterBinding.inflate(inflater, container, false)
         mBinding.lifecycleOwner = this
         return mBinding.root
 //        return inflater.inflate(com.example.kplusregistration.R.layout.fragment_register, container, false)
@@ -57,7 +57,7 @@ class RegisterFragment : Fragment() {
         })
 
         mCallbackManager = CallbackManager.Factory.create()
-        id_facebook_login_button_fragment_register.setPermissions(listOf("email", "public_profile"))
+        id_facebook_login_button_fragment_register.setPermissions(listOf("email", "public_profile", "user_birthday"))
         id_facebook_login_button_fragment_register.fragment = this
 
         //for facebook
@@ -69,7 +69,6 @@ class RegisterFragment : Fragment() {
 
             getUserProfile(AccessToken.getCurrentAccessToken())
         }
-
         id_facebook_login_button_fragment_register.registerCallback(
             mCallbackManager,
             object : FacebookCallback<LoginResult> {
@@ -150,16 +149,17 @@ class RegisterFragment : Fragment() {
                 val iLastName = `object`["last_name"].toString()
                 val iEmail = `object`["email"].toString()
                 val iId = `object`["id"].toString()
+                val userBday = `object`["user_birthday"].toString()
                 val iImageUrl = "https://graph.facebook.com/$id/picture?type=normal"
 
-                Log.d("API123", "$iFirstName, $iLastName, $iEmail, $iId, $iImageUrl")
+                Log.d("API123", "$iFirstName, $iLastName, $iEmail, $iId, $iImageUrl, $userBday")
             } catch (e: JSONException) {
                 println("$e")
             }
         }
 
         val iParameters = Bundle()
-        iParameters.putString("fields", "first_name,last_name,email,id,picture.type(large)")
+        iParameters.putString("fields", "first_name,last_name,email,id,picture.type(large),birthday")
         iRequest.parameters = iParameters
         iRequest.executeAsync()
     }

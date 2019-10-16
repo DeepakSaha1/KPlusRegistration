@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.example.kplusregistration.model.RegisterModel
 
 class RegisterViewModel : ViewModel() {
-    var mEmail: MutableLiveData<String> = MutableLiveData()
-    var mPassword: MutableLiveData<String> = MutableLiveData()
+    var mEmail: MutableLiveData<String>? = MutableLiveData()
+    var mPassword: MutableLiveData<String>? = MutableLiveData()
 
     var registerUserMutableLiveData: MutableLiveData<RegisterModel> = MutableLiveData()
 
@@ -22,8 +22,8 @@ class RegisterViewModel : ViewModel() {
 
     fun onClick(v: View) {
         Log.d("step1", "register button clicked..")
-        var registerModel = RegisterModel(mEmail.value?.trim()!!, mPassword.value?.trim()!!, "1234560", "9934676950")
+        var registerModel = RegisterModel(mEmail?.value?.trim()!!, mPassword?.value?.trim()!!, "1234560", "9934676950")
         registerUserMutableLiveData.value = registerModel
-        Log.d("Google", "${mEmail.value}")
+        Log.d("Google", "${mEmail?.value}")
     }
 }
